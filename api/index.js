@@ -8,6 +8,7 @@ import postRoutes from "./routes/post.route.js";
 import commentRoutes from "./routes/comment.route.js";
 import cookieParser from "cookie-parser";
 import path from "path";
+connectToMongoDB();
 
 const app = express()
 dotenv.config();
@@ -32,6 +33,5 @@ app.get('*', (req, res) => {
 app.use(errorUtil)
 
 app.listen(PORT, () => {
-    connectToMongoDB();
     console.log(`Server running at port ${PORT}`);
 })
